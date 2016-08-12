@@ -27,6 +27,7 @@
 
 with LEDs;             use LEDs;
 with Button;           use Button;
+with MAX7219;          use MAX7219;
 with MAX7219.Matrices; use MAX7219.Matrices;
 with Ada.Real_Time;    use Ada.Real_Time;
 
