@@ -1,4 +1,4 @@
-with Registers;    use Registers;
+with Registers; use Registers;
 with MAX7219.GPIO;
 
 package body MAX7219 is
@@ -8,7 +8,8 @@ package body MAX7219 is
       GPIO.Write (O.Id, 0);
    end Off;
 
-   procedure Flush is
+   procedure Flush (O : in out MAX7219) is
+      pragma Unreferenced (O);
    begin
       GPIO.Flush;
    end Flush;

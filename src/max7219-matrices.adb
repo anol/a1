@@ -28,7 +28,7 @@ package body MAX7219.Matrices is
      (Column      : Pixsel_Column;
       Raw : Register_Type) return Register_Type
    is
-      Register : constant Register_Type := ( Shift_Left(Raw, 1) and 16#0038# ) + 16#0100#;
+      Register : constant Register_Type := ( Shift_Left(Raw, 5) and 16#0700# ) + 16#0100#;
       Pixels : Register_Type := 0;
    begin
       for R in Column'Range loop
@@ -47,6 +47,7 @@ package body MAX7219.Matrices is
    begin
       O.Pixel_Matrix (Row)(Column) := True;
       Write (Id => O.Id, Register => Column_2_Register (O.Pixel_Matrix (Row), Raw));
+      Flush;
    end On;
 
    procedure Off (O : in out Matrix; Pixel : Pixel_Number) is
@@ -56,6 +57,7 @@ package body MAX7219.Matrices is
    begin
       O.Pixel_Matrix (Row)(Column) := False;
       Write (Id => O.Id, Register => Column_2_Register (O.Pixel_Matrix (Row), Raw));
+      Flush;
    end Off;
 
 end MAX7219.Matrices;

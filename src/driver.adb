@@ -54,7 +54,6 @@ package body Driver is
          Display.Off (Counter);
          Counter := Counter + 1;
          Display.On (Counter);
-         Flush;
          if Button.Current_Direction = Clockwise then
             Next_LED := Next_LED - 1;
          else
