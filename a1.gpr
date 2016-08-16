@@ -13,7 +13,6 @@ project A1 is
 
    package Builder is
       for Switches ("ada") use ("-g", "-O0", "-s", "-k");
-      for Executable ("main.adb") use "main.bin";
    end Builder;
 
    package Ide is
@@ -26,8 +25,6 @@ project A1 is
 
    package Emulator is
    end Emulator;
-
-   for Exec_Dir use "./";
 
 end A1;
 
