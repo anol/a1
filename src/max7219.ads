@@ -42,4 +42,6 @@ package MAX7219 is
 
    procedure Off (O : in out MAX7219);
 
+   procedure Flush;
+
 end MAX7219;

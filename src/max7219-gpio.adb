@@ -11,9 +11,9 @@ package body MAX7219.GPIO is
 
    type IO_Port_Type is (Load, Clock, Data);
    for IO_Port_Type use
-     (Load  => 16#0010#,
-      Clock => 16#0020#,
-      Data  => 16#0040#);
+     (Load  => 16#0010#, -- PE4
+      Clock => 16#0020#, -- PE5
+      Data  => 16#0040#); -- PE6
    for IO_Port_Type'Size use Word'Size;
    subtype IO_Port_Range is Integer range 4 .. 6;
 

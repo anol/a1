@@ -1,4 +1,4 @@
-project a1 is
+project A1 is
 
    for Languages use ("ada");
    for Main use ("main.adb");
@@ -12,7 +12,8 @@ project a1 is
    end Compiler;
 
    package Builder is
-      for Switches ("ada") use ("-g", "-O0");
+      for Switches ("ada") use ("-g", "-O0", "-s", "-k");
+      for Executable ("main.adb") use "main.bin";
    end Builder;
 
    package Ide is
@@ -26,5 +27,7 @@ project a1 is
    package Emulator is
    end Emulator;
 
-end a1;
+   for Exec_Dir use "./";
+
+end A1;
 

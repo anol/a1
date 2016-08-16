@@ -5,7 +5,8 @@ package MAX7219.Matrices is
    type Pixel_Range is mod 2**3;
    type Pixel_Number is mod 2**6;
 
-   type Pixels is array (Pixel_Range, Pixel_Range) of Boolean;
+   type Pixsel_Column is array (Pixel_Range ) of Boolean;
+   type Pixels is array (Pixel_Range) of Pixsel_Column;
 
    type Matrix is new MAX7219 with record
       Pixel_Matrix : Pixels;
