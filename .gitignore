@@ -1,6 +1,9 @@
 # Object file
 *.o
 
+# Prety printer backup file
+*.npp
+
 # Ada Library Information
 *.ali
 
